@@ -11,6 +11,7 @@ class Queue(AbstractQueue):
 
     def enqueue(self, value):
         self.itens.append(value)
+        self.length += 1
 
     def dequeue(self):
         if self.length > 0:
@@ -21,7 +22,8 @@ class Queue(AbstractQueue):
         return None
 
     def search(self, index):
-        if index > self.length:
+        index_invalid = not isinstance(index, int)
+        index_range_invalid = 0 > index or index >= self.length
+        if index_invalid or index_range_invalid:
             raise IndexError("Índice Inválido ou Inexistente")
-
         return self.itens[index]
