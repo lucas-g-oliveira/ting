@@ -9,17 +9,23 @@ def process(path_file, instance: Queue):
             return instance.search(i)
 
     data = txt_importer(path_file)
-    instance.enqueue({
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": len(data),
-        "linhas_do_arquivo": data,
-    })
-    print(instance.search(len(instance)-1), file=sys.stdout)
+    instance.enqueue(
+        {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(data),
+            "linhas_do_arquivo": data,
+        }
+    )
+    print(instance.search(len(instance) - 1), file=sys.stdout)
     return
 
 
-def remove(instance):
-    """Aqui irá sua implementação"""
+def remove(instance: Queue):
+    if not len(instance):
+        print("Não há elementos", file=sys.stdout)
+    else:
+        item = instance.dequeue()
+        print(f"Arquivo {item['nome_do_arquivo']} removido com sucesso")
 
 
 def file_metadata(instance, position):
