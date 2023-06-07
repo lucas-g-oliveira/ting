@@ -1,7 +1,0 @@
-A classe PriorityQueue utiliza a implementação da classe Queue do requisito
-1 para armazenar arquivos pequenos com prioridade. Utilizando a classe
-PriorityQueue, arquivos com menos de 5 linhas são armazenados de forma
-prioritária na fila, o que impacta no resultado dos métodos dequeue e search.
-
-Você deve implementar testes para a classe PriorityQueue, garantindo
-que a lógica de prioridades é respeitada pelos métodos enqueue, dequeue e search.
