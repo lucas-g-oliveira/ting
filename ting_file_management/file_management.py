@@ -2,8 +2,8 @@ import sys
 
 
 def txt_importer(path_file):
-    print(str(path_file).split('.')[-1])
-    if not str(path_file).split('.')[-1] == "txt":
+    print(str(path_file).split(".")[-1])
+    if not str(path_file).split(".")[-1] == "txt":
         print("Formato inválido", file=sys.stderr)
         return []
     try:
